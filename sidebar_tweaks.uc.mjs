@@ -1,7 +1,7 @@
 import { SIDEBAR_CSS } from './sidebar_styles.mjs';
 
 /**
- * iLiranS - link here
+ * https://github.com/iLiranS/zen-sidebar-toggle
  * some things to do before making it work
  * 1. Install fx-autoconfig https://github.com/MrOtherGuy/fx-autoconfig
  * 2. copy the sidebar_tweaks.uc.mjs and sidebar_styles.mjs into JS folder.
