@@ -29,4 +29,25 @@ export const SIDEBAR_CSS = `
 #import-button {
   list-style-image: url('chrome://browser/skin/sidebars.svg') !important;
 }
-`
+
+/* Pin button styles */
+#sidebar-pin {
+  padding: 4px 4px !important;
+  margin-right: 2px !important;
+  min-width: 28px !important;
+  min-height: 28px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 16px !important;
+}
+
+#sidebar-pin.pinned-button {
+  background-color: var(--zen-colors-border) !important;
+}
+
+/* Hide the default toolbarbutton-icon for pin button */
+#sidebar-pin .toolbarbutton-icon {
+  display: none !important;
+}
+`;

@@ -15,9 +15,11 @@ import { SIDEBAR_CSS } from './sidebar_styles.mjs';
 
 
 const sidebar = document.getElementById("sidebar-box");
+// identify the browser 
 const sidebarButton = document.getElementById("sidebar-button");
 const toggleButton = document.getElementById("import-button"); // it's not meant to be but we override behavior 
 let isOpen = false
+let pinned = false
 
 // load styles
 const applyStyles = () => {
@@ -96,6 +98,47 @@ if (sidebarButton) {
   observer.observe(sidebarButton, { attributes: true });
 }
 
+//  Clicking outside the sidebar or sidebar button will hide it
+document.addEventListener('click', (e) => {
+  if (e.button !== 0 || !isOpen || e.target.id === "sidebar-button" || pinned) return
+  if (e.target.hasAttribute("contextmenu")) {
+    // meaning clicked inside the main browser so hide sidebar
+    isOpen = false
+    toggleHandler()
+  }
+
+
+})
+
+// Add this after your const declarations
+const createPinButton = () => {
+  const pinButton = document.createElement('toolbarbutton');
+  pinButton.id = 'sidebar-pin';
+  pinButton.className = 'close-icon tabbable';
+  pinButton.setAttribute('tooltiptext', 'Pin sidebar');
+  pinButton.textContent = '📌';
+
+  const closeButton = document.getElementById('sidebar-close');
+  closeButton.parentNode.insertBefore(pinButton, closeButton);
+
+  // Add click handler
+  pinButton.addEventListener('click', () => {
+    pinned = !pinned;
+    if (pinned) {
+      pinButton.classList.add('pinned-button');
+    } else {
+      pinButton.classList.remove('pinned-button');
+    }
+  });
+
+  return pinButton;
+};
+
+// Add this to your initialization timeout
+setTimeout(() => {
+  updateInitialState();
+  toggleButton.setAttribute("tooltiptext", "Toggle Sidebar");
+  createPinButton(); // Create the pin button
+}, 500);
+
 applyStyles();
-
-
