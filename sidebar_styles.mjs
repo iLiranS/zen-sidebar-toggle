@@ -30,6 +30,13 @@ export const SIDEBAR_CSS = `
   list-style-image: url('chrome://browser/skin/sidebars.svg') !important;
 }
 
+/* Make close button bigger */
+#sidebar-close{
+  padding: 4px 4px !important;
+    min-width: 28px !important;
+  min-height: 28px !important;
+}
+
 /* Pin button styles */
 #sidebar-pin {
   padding: 4px 4px !important;
@@ -39,15 +46,25 @@ export const SIDEBAR_CSS = `
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  font-size: 16px !important;
+}
+
+#sidebar-pin img {
+  width: 16px !important;
+  height: 16px !important;
+  opacity: 0.7;
 }
 
 #sidebar-pin.pinned-button {
   background-color: var(--zen-colors-border) !important;
 }
 
+#sidebar-pin.pinned-button img {
+  opacity: 1;
+}
+
 /* Hide the default toolbarbutton-icon for pin button */
 #sidebar-pin .toolbarbutton-icon {
   display: none !important;
 }
+
 `;

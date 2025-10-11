@@ -116,7 +116,12 @@ const createPinButton = () => {
   pinButton.id = 'sidebar-pin';
   pinButton.className = 'close-icon tabbable';
   pinButton.setAttribute('tooltiptext', 'Pin sidebar');
-  pinButton.textContent = '📌';
+
+  // Create and append img element
+  const img = document.createElement('img');
+  img.src = 'chrome://browser/skin/pin.svg';
+  img.style.transform = "rotateY(180deg)"
+  pinButton.appendChild(img);
 
   const closeButton = document.getElementById('sidebar-close');
   closeButton.parentNode.insertBefore(pinButton, closeButton);
