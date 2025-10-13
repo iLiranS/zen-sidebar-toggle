@@ -1,4 +1,5 @@
 ## How to use
+0. (You can Skip step 1 and 2 if installed throuhgh Sine - currently not on Sine!)
   1. Install fx-autoconfig https://github.com/MrOtherGuy/fx-autoconfig
   2. copy the `sidebar_tweaks.uc.mjs` and `sidebar_styles.mjs` into JS folder.
   3. make sure `browser.ml.chat.enabled` is set to true in `about:config` to use the AI chat bots.
@@ -8,5 +9,6 @@
   - the toggle button icon you used will be replaced automatically to sidebar one.
   7. change the shortcut  to the desired one, just make sure it won't colldie with other shortcuts.
 
+
 ## Demo
-<video src="./demo.mp4" controls></video>
+[![Demo](./demo_img.png)](https://f3zt4im3rd.ufs.sh/f/F0BpEl6F0ft7PzcsQTRvrbtkge5fz1QJnq3NTuYURs9F8lXp)
