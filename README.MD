@@ -7,3 +7,6 @@
   -  to get id of a tooltip use browser toolbox - inspect and get it's id - change it in `toggleButton` const value.
   - the toggle button icon you used will be replaced automatically to sidebar one.
   7. change the shortcut  to the desired one, just make sure it won't colldie with other shortcuts.
+
+## Demo
+<video src="https://f3zt4im3rd.ufs.sh/f/F0BpEl6F0ft7PzcsQTRvrbtkge5fz1QJnq3NTuYURs9F8lXp" controls></video>
