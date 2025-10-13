@@ -29,6 +29,10 @@ export const SIDEBAR_CSS = `
   right:0 !important;
   left: inherit !important;
   transform: translateX(-10px) !important;
+  direction: rtl;
+  >*{
+  direction:initial;
+  }
 }
 #sidebar-box[sidebar-positionend=""].close {
   transform: translateX(110%) !important;
