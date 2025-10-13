@@ -1,29 +1,46 @@
 export const SIDEBAR_CSS = `
 #sidebar-splitter {
   display: none !important;
+
 }
 
 /* default - hide */
 #sidebar-box {
   position: absolute !important;
-  right: 0;
+  left: 0;
+  transform:translateX(10px);
   top: 5px !important;
-  height: calc(100vh - 30px) !important;
-  width: 450px !important;
+  height: calc(100vh - 30px);
+  max-height: calc(100vh - 30px);
+  width: 450px;
   z-index: 10 !important;
+  resize:both;
 
   border-radius: var(--zen-border-radius) !important;
   box-shadow: var(--box-shadow-10) !important;
   background: var(--zen-colors-tertiary) !important;
   border: 1px solid var(--zen-colors-border) !important;
   transition: transform 0.3s ease-in-out;
-  transform: translateX(-10px);
+
   /* initial visible value*/
 }
-
-#sidebar-box.close {
-  transform: translateX(110%);
+/* Sidebar position (right) - has attribute means on the right*/
+#sidebar-box[sidebar-positionend=""]{
+  right:0 !important;
+  left: inherit !important;
+  transform: translateX(-10px) !important;
 }
+#sidebar-box[sidebar-positionend=""].close {
+  transform: translateX(110%) !important;
+  }
+
+/* Sidebar position (left) (default) just add hide */
+#sidebar-box.close{
+  transform: translateX(calc(-110% - 200px)) !important;
+
+}
+
+
 
 /* mask image to look like sidebar */
 #import-button {
