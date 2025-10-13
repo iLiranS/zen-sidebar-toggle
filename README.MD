@@ -9,4 +9,4 @@
   7. change the shortcut  to the desired one, just make sure it won't colldie with other shortcuts.
 
 ## Demo
-<video src="https://f3zt4im3rd.ufs.sh/f/F0BpEl6F0ft7PzcsQTRvrbtkge5fz1QJnq3NTuYURs9F8lXp" controls></video>
+<video src="./demo.mp4" controls></video>
