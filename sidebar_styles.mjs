@@ -35,12 +35,13 @@ export const SIDEBAR_CSS = `
   }
 }
 #sidebar-box[sidebar-positionend=""].close {
-  transform: translateX(110%) !important;
+
+  transform: translateX(calc(110% + var(--actual-zen-sidebar-width) )) !important;
   }
 
-/* Sidebar position (left) (default) just add hide */
+/* Sidebar position (left) (default) - transform to the left*/
 #sidebar-box.close{
-  transform: translateX(calc(-110% - 200px)) !important;
+  transform: translateX(calc(-110%  - var(--actual-zen-sidebar-width))) !important;
 
 }
 

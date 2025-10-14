@@ -5,7 +5,7 @@
   4. make sure "import-button" tooltip is being placed in your desired location (or other unused tooltip button - but change it's id) ,it will act as toggle button.
   -  to get id of a tooltip, use browser toolbox - inspect and get it's id - change it in `toggleButton` const value.
   - the toggle button icon you used will be replaced automatically to sidebar one.
-  7. change the shortcut  to the desired one, just make sure it won't colldie with other shortcuts.
+  5. change the shortcut  to the desired one, just make sure it won't colldie with other shortcuts.
 
 
 ## Demo

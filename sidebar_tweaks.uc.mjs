@@ -9,11 +9,11 @@ const sidebar = document.getElementById("sidebar-box");
 let win = Services.wm.getMostRecentWindow("navigator:browser"); // sidebar service
 let isOpen = win.SidebarController.isOpen
 // identify the browser 
-// const sidebarButton = document.getElementById("sidebar-button");
 const toggleButton = document.getElementById("import-button"); // it's not meant to be but we override behavior 
 const closeButton = document.getElementById('sidebar-close');
-// let isOpen = false
 let pinned = false
+const navigatorWidth = document.getElementById("navigator-toolbox").getAttribute("--actual-zen-sidebar-width")
+sidebar.style.setProperty("--actual-zen-sidebar-width", navigatorWidth ?? '200px') // defaults to 200, how much transform on top of 100%
 
 // load styles
 const applyStyles = () => {
@@ -67,8 +67,6 @@ document.addEventListener('click', (e) => {
     // meaning clicked inside the main browser so hide sidebar but not closing it
     toggleHandler()
   }
-
-
 })
 
 /**
