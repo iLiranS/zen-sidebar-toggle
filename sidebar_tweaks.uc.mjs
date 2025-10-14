@@ -12,8 +12,32 @@ let isOpen = win.SidebarController.isOpen
 const toggleButton = document.getElementById("import-button"); // it's not meant to be but we override behavior 
 const closeButton = document.getElementById('sidebar-close');
 let pinned = false
-const navigatorWidth = document.getElementById("navigator-toolbox").getAttribute("--actual-zen-sidebar-width")
-sidebar.style.setProperty("--actual-zen-sidebar-width", navigatorWidth ?? '200px') // defaults to 200, how much transform on top of 100%
+
+/**
+ * Sidebar margin - depends on Zen sidebar (tabs) width
+ */
+const navigatorToolbox = document.getElementById("navigator-toolbox");
+// Get initial width from computed style
+const computedStyle = getComputedStyle(navigatorToolbox);
+const navigatorWidth = computedStyle.getPropertyValue('--actual-zen-sidebar-width');
+sidebar.style.setProperty("--actual-zen-sidebar-width", navigatorWidth.trim() || '200px');
+
+// add observer for style changes
+const observer = new MutationObserver((mutations) => {
+  mutations.forEach((mutation) => {
+    if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
+      const computedStyle = getComputedStyle(navigatorToolbox);
+      const newWidth = computedStyle.getPropertyValue('--actual-zen-sidebar-width');
+      sidebar.style.setProperty("--actual-zen-sidebar-width", newWidth.trim() || '200px');
+    }
+  });
+});
+
+// start observing the navigator-toolbox for style changes
+observer.observe(navigatorToolbox, {
+  attributes: true,
+  attributeFilter: ['style']
+});
 
 // load styles
 const applyStyles = () => {

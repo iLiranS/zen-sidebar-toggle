@@ -9,4 +9,5 @@
 
 
 ## Demo
+- (click the thumbnail to play the video)
 [![Demo](./demo_img.png)](https://f3zt4im3rd.ufs.sh/f/F0BpEl6F0ft7PzcsQTRvrbtkge5fz1QJnq3NTuYURs9F8lXp)
