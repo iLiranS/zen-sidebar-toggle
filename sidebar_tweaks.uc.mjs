@@ -65,6 +65,9 @@ const toggleHandler = (changeState = true) => {
 toggleButton.addEventListener('click', (e) => {
   e.preventDefault()
   e.stopPropagation()
+  if (!win.SidebarController.isOpen) {
+    win.SidebarController.toggle();
+  }
   toggleHandler()
 })
 
